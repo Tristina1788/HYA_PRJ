@@ -36,11 +36,10 @@ test.describe("Add a new role", () => {
     test("should enable to create a new role", async () => {
     await sleep(3000);
     dashboardPage = new dashboard(page);
-    await dashboardPage.addRoleButton.click();
-    await page.locator('input[name="title"]').fill("testtttttttttt");
+    await dashboardPage.createRole();
     await sleep(3000);
     rolePage = new role(page);
-    rolePage.addNewRole("RoleTesting","USA","22-06-2022",5000,8000)
+    await rolePage.addNewRole("RoleTesting1","USA","2022-06-22",5000,8000)
 
     });
   });

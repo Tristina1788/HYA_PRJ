@@ -36,8 +36,8 @@ export class role extends CommonPage {
     this.partTimeRadio = this.page.locator('div[role="radio"]:has-text("Part-time")');
     this.locationText = this.page.locator('input[name="location"]');
     this.deadlineText = this.page.locator('input[name="deadline"]');
-    this.amountFromText = this.page.locator('text=£$€to >> input[type="text"]');
-    this.amountToText = this.page.locator('text=£$€to >> input[type="text"]');
+    this.amountFromText = this.page.locator('text=£$€to >> input[type="text"]').first();
+    this.amountToText = this.page.locator('text=£$€to >> input[type="text"]').nth(1);
     this.showRemunerationOption = this.page.locator('text=Show remuneration on job advert');
     this.hiringManagermentSelectBox = this.page.locator('text=Apollo Member4');
     this.hiringManagermentOption3 = this.page.locator('#react-select-4-option-3');
@@ -55,8 +55,6 @@ export class role extends CommonPage {
   }
   
   async addNewRole( roleName: string,  location: string, dateTime: string, amountFrom : number, amountTo :number) {
-     
-        await this.titleRoleText.click();
         await this.titleRoleText.fill(roleName);
         await this.desTemplateRoleBtn.click();
         await this.frontEndTemplateSelectoin.click();
@@ -64,8 +62,8 @@ export class role extends CommonPage {
         await this.locationText.click();
         await this.locationText.fill(location);
         await this.deadlineText.fill(dateTime);
-        await this.amountFromText.click();
-        await this.amountFromText.fill(amountFrom+'');
+        await this.amountFromText.first().click();
+        await this.amountFromText.first().fill(amountFrom+'');
         await this.amountToText.click();
         await this.amountToText.fill(amountTo+'');
         await this.showRemunerationOption.click();
@@ -79,6 +77,7 @@ export class role extends CommonPage {
         await this.AdditionQuestionText.waitFor();
         await this.AdditionQuestionText.click();
         await this.AdditionQuestionOptionGoodMorning.click();
+        await this.saveContinueBtn.click();
         await this.approvalSelection.click();
         await this.acceptApplicationRadio.click();
         await this.createRoleBtn.click()

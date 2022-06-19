@@ -37,18 +37,12 @@ test.describe("Add a new role", () => {
     await sleep(3000);
     dashboardPage = new dashboard(page);
     await dashboardPage.addRoleButton.click();
-    //dashboardPage.createRole();
-    //await page.locator('text=Add role').click();
     await page.locator('input[name="title"]').fill("testtttttttttt");
     await sleep(3000);
     rolePage = new role(page);
-    // await sleep(3000);
-    // await page.locator('input[name="title"]').fill("testtttttttttt");
     rolePage.addNewRole("RoleTesting","USA","22-06-2022",5000,8000)
 
     });
-    
-    //await expect(page.locator('[data-test-id="role-title"]')).toContainText(roleName);
   });
 
 

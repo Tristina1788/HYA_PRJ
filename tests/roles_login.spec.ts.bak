@@ -8,6 +8,7 @@ import { role } from "./page/role.po";
 let page: Page;
 let loginPage:login;
 let dashboardPage:dashboard;
+let dashboardPage1:dashboard;
 let rolePage:role;
 const { email, password, url } = env;
 
@@ -41,7 +42,6 @@ test.describe("Add a new role", () => {
     rolePage = new role(page);
     await rolePage.addNewRole("RoleTesting1","USA","2022-06-22",5000,8000);
     var linkApplyRole = url + await rolePage.getLinkFromRole() ;
-    console.log("linkApplyRole:"+linkApplyRole);
     });
   });
 

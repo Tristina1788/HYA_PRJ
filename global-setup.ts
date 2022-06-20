@@ -14,10 +14,10 @@ async function globalSetup(config: FullConfig) {
   await page.goto("https://app.hya.work/login/");
 
   await page.locator("text=Sign in with email").click();
-  await page.locator('input[type="email"]').fill(process.env.ADMIN_USERNAME);
-  await page.locator('input[type="password"]').fill(process.env.ADMIN_PASSWORD);
+  await page.locator('input[type="email"]').fill(process.env.ADMIN_USERNAME+'');
+  await page.locator('input[type="password"]').fill(process.env.ADMIN_PASSWORD+'');
   await page.locator('button:has-text("Sign in")').click();
-
+  console.log("go global setup");
   await page
     .context()
     .storageState({ path: "/Users/wimagguc/Desktop/state.json" });

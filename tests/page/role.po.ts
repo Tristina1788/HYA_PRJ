@@ -25,6 +25,8 @@ export class role extends CommonPage {
   readonly approvalSelection: Locator;
   readonly acceptApplicationRadio: Locator;
   readonly createRoleBtn: Locator;
+  readonly roleMenuBtn: Locator;
+  readonly viewJobBtn: Locator;
  
 
   constructor(page: Page) {
@@ -51,6 +53,8 @@ export class role extends CommonPage {
     this.approvalSelection = this.page.locator('.hya-select__indicator'); 
     this.acceptApplicationRadio = this.page.locator('text=Only accept internal applications'); 
     this.createRoleBtn = this.page.locator('button:has-text("Create role")'); 
+    this.roleMenuBtn = this.page.locator('xpath=//button[contains(@id,"headlessui-menu-button")]');
+    this.viewJobBtn = this.page.locator('text=View job ad');
     
   }
   
@@ -82,5 +86,13 @@ export class role extends CommonPage {
         await this.acceptApplicationRadio.click();
         await this.createRoleBtn.click()
         
+  }
+
+  async getLinkFromRole() {
+    await this.roleMenuBtn.click();
+    var link =  this.viewJobBtn.getAttribute('href');
+    return link;
+
+    
   }
 }

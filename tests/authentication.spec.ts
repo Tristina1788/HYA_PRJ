@@ -8,7 +8,7 @@ const { email, password, url } = env;
 test.beforeEach(async ({ browser }) => {
   page = await browser.newPage();
   loginPage = new login(page);
-  await loginPage.openUrl(url);
+  await loginPage.openUrl(url+'/login/');
 });
 test.describe('Authentication', () => {
   test("should not log in with an correct username", async () => {

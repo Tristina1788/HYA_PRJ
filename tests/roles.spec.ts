@@ -1,13 +1,14 @@
 import { test, expect } from "@playwright/test";
+import { env } from "../helpers/env";
 import { addAuthTo } from "../lib/firebaseAuth";
-
+const { email, password, url } = env;
 test.beforeEach(async ({ browser, page }) => {
-  await page.goto("https://app.hya.work/");
+  await page.goto(url);
   await browser.newContext({
     storageState: "/Users/wimagguc/Desktop/state.json"
   });
   await addAuthTo(page);
-  await page.goto("https://app.hya.work/hire/roles/");
+  await page.goto(url+"/hire/roles/");
 });
 
 test.describe("Roles", () => {

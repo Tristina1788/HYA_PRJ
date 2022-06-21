@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "sameSite": "Lax",
+      "name": "_ga_6W2FSXJ2S8",
+      "value": "GS1.1.1655781799.1.0.1655781799.0",
+      "domain": ".hya.work",
+      "path": "/",
+      "expires": 1690341799.166391,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "_ga",
+      "value": "GA1.1.2040298396.1655781799",
+      "domain": ".hya.work",
+      "path": "/",
+      "expires": 1690341799.16695,
+      "httpOnly": false,
+      "secure": false
+    }
+  ],
+  "origins": []
+}

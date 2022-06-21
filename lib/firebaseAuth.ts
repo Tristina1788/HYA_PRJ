@@ -24,7 +24,6 @@ export const captureAuthFrom = async (page: Page) => {
       storeName,
       apiKey
     });
-    console.log("result :"+result);
     if (!result) {
       throw "Is not auth user result";
     }

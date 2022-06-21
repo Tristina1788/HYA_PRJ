@@ -37,7 +37,8 @@ let linkApplyRole = '';
 // });
 
 test.describe("Verify create new role and apply for role as an anonymous user", () => {
-  test.beforeAll(async ({ browser }) => {
+  test.beforeAll(async ({ browser },testInfo) => {
+    testInfo.setTimeout(testInfo.timeout + 300000);
     page = await browser.newPage();
     loginPage = new LoginPage(page);
     await loginPage.openUrl(url+'/login/');

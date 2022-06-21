@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { Constant } from '../../common/constant';
-import { ApplicatorInfo, ApplyInfo } from '../../model/applicator';
+import { ApplyInfo } from '../../model/applicator';
 
 import { CommonPage } from './common.po';
 
